@@ -1,0 +1,165 @@
+<?xml version="1.0" ?>
+<robot name="ramos" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find ramos_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find ramos_description)/urdf/ramos.trans" />
+<xacro:include filename="$(find ramos_description)/urdf/ramos.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0004936392022467394 0.0 0.07842907834280251" rpy="0 0 0"/>
+    <mass value="121.41115919800309"/>
+    <inertia ixx="2.59902" iyy="2.037187" izz="4.476291" ixy="0.0" iyz="0.0" ixz="0.012916"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel1_1">
+  <inertial>
+    <origin xyz="-1.6792123247455493e-15 -0.010999999999999954 0.0" rpy="0 0 0"/>
+    <mass value="0.25005354359004234"/>
+    <inertia ixx="0.000255" iyy="0.00049" izz="0.000255" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.115 0.26 -0.0625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/wheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.115 0.26 -0.0625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/wheel1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="wheel2_1">
+  <inertial>
+    <origin xyz="1.7486012637846216e-15 0.010999999999999954 1.3877787807814457e-17" rpy="0 0 0"/>
+    <mass value="0.2500535435900424"/>
+    <inertia ixx="0.000255" iyy="0.00049" izz="0.000255" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.115 -0.26 -0.0625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/wheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.115 -0.26 -0.0625" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/wheel2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster1_1">
+  <inertial>
+    <origin xyz="-0.02499999999999994 -0.07000000000000003 -0.01759146341463416" rpy="0 0 0"/>
+    <mass value="0.0021467549799530335"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.22 0.0 -0.0425" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/caster1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.22 0.0 -0.0425" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/caster1_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="caster2_1">
+  <inertial>
+    <origin xyz="-0.024999999999999967 0.06999999999999997 -0.017591463414634145" rpy="0 0 0"/>
+    <mass value="0.0021467549799530253"/>
+    <inertia ixx="1e-06" iyy="1e-06" izz="1e-06" ixy="0.0" iyz="0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="-0.22 0.0 -0.0425" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/caster2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="-0.22 0.0 -0.0425" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/caster2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="lidar_1">
+  <inertial>
+    <origin xyz="1.8082757513582237e-14 5.9232972891274e-18 0.024999999999999856" rpy="0 0 0"/>
+    <mass value="3.013327316029944"/>
+    <inertia ixx="0.002553" iyy="0.002553" izz="0.003851" ixy="-0.0" iyz="-0.0" ixz="0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.115 -0.0 -0.4825" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.115 -0.0 -0.4825" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://ramos_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Revolute 6" type="continuous">
+  <origin xyz="-0.115 -0.26 0.0625" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel1_1"/>
+  <axis xyz="0.0 -1.0 0.0"/>
+</joint>
+
+<joint name="Revolute 7" type="continuous">
+  <origin xyz="-0.115 0.26 0.0625" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="wheel2_1"/>
+  <axis xyz="0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rigid 8" type="fixed">
+  <origin xyz="0.22 0.0 0.0425" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="caster1_1"/>
+</joint>
+
+<joint name="Rigid 9" type="fixed">
+  <origin xyz="0.22 0.0 0.0425" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="caster2_1"/>
+</joint>
+
+<joint name="Rigid 10" type="fixed">
+  <origin xyz="-0.115 0.0 0.4825" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="lidar_1"/>
+</joint>
+
+</robot>
